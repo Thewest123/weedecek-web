@@ -1,0 +1,39 @@
+{
+  "connection": "default",
+  "collectionName": "products",
+  "info": {
+    "name": "product",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "Description": {
+      "type": "text"
+    },
+    "Name": {
+      "unique": true,
+      "required": true,
+      "type": "string"
+    },
+    "Price": {
+      "type": "decimal",
+      "required": true
+    },
+    "pictures": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "categories": {
+      "collection": "category",
+      "via": "products"
+    }
+  }
+}

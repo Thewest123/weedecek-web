@@ -1,0 +1,29 @@
+# Write your query or mutation here
+
+mutation {
+  login (input: {
+    identifier: "test2"
+    password: "pass2"    
+  }) {
+    user {
+      username
+      email
+      id
+    }
+  }
+}
+
+mutation {
+  createUser(input: {
+    data: {
+      username: "test2",
+      email: "test2@test.com"
+      password: "pass2"
+    }
+  }) {
+    user {
+      username: username,
+      email: email      
+    }
+  }
+}
