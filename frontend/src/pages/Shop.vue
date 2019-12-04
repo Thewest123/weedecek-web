@@ -1,22 +1,26 @@
 <template>
   <Layout>
     <h1>Shop</h1>
-    <!-- <p v-for="edge in $page.products.edges" :key="edge.product.id">{{edge.product.Name}}</p> -->
-    <ProductCard v-for="edge in $page.products.edges" :key="edge.product.id" :product="edge.product"/>
+
+    <el-row>
+      <el-col :span="8" v-for="(edge, index) in $page.products.edges" :key="edge.product.id" :offset="index > 0 ? 2 : 0">
+        <ProductCard :product="edge.product" />
+      </el-col>
+    </el-row>
   </Layout>
 </template>
 
 <script>
-import ProductCard from '~/components/ProductCard'
+import ProductCard from "~/components/ProductCard";
 
 export default {
   metaInfo: {
-    title: 'Shop'
+    title: "Shop"
   },
   components: {
     ProductCard
   }
-}
+};
 </script>
 
 <page-query>
@@ -31,7 +35,8 @@ query AllProducts {
         pictures {
           id,
           url
-        }
+        },
+        path
       }
     }    
   }

@@ -1,6 +1,8 @@
 <template>
   <Layout>
 
+    <Main-Carousel/>
+
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <g-image alt="Example image" src="~/favicon.png" width="135" />
 
@@ -24,13 +26,20 @@
       <el-button type="danger">Danger</el-button>
     </el-row>
 
+    
+
   </Layout>
 </template>
 
 <script>
+import MainCarousel from '~/components/MainCarousel.vue'
+
 export default {
   metaInfo: {
     title: 'Hello, world!'
+  },
+  components: {
+    MainCarousel
   }
 }
 </script>
