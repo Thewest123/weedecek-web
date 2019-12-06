@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div>
+    <section class="w-full font-sans container m-auto py-8">
       <h1 v-html="$page.product.Name" />
       <h2 v-html="$page.product.Price" />
       <div v-html="$page.product.Description" />
@@ -23,7 +23,7 @@
               </li>
           </ul>
       </div>
-    </div>
+    </section>
   </Layout>
 </template>
 

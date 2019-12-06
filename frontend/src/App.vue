@@ -1,14 +1,12 @@
 <template>
-  <div>
-    <el-container>
-      <el-header>
-        <NavBar />
-      </el-header>
-      <el-main>
-        <router-view />
-      </el-main>
-      <el-footer></el-footer>
-    </el-container>
+  <div class="flex flex-col h-full min-h-screen">
+    <header>
+      <NavBar />
+    </header>
+    <main class="flex-1">
+      <router-view />
+    </main>
+    <Footer />
   </div>
 </template>
 
@@ -22,7 +20,8 @@ query {
 </static-query>
 
 <script>
-import NavBar from "./components/NavBar.vue";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 export default {
   metaInfo() {
@@ -38,7 +37,8 @@ export default {
     };
   },
   components: {
-    NavBar
+    NavBar,
+    Footer
   }
 };
 </script>

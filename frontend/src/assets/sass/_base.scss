@@ -9,3 +9,8 @@ $--color-info:#82B3E1;
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 @import '~element-ui/packages/theme-chalk/src/index.scss';
+
+/** OTHER **/
+a:hover {
+    color: $--color-primary
+}

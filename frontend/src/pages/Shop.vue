@@ -1,24 +1,29 @@
 <template>
   <Layout>
-    <h1>Shop</h1>
-
-    <el-row>
-      <el-col :span="8" v-for="(edge, index) in $page.products.edges" :key="edge.product.id" :offset="index > 0 ? 2 : 0">
-        <ProductCard :product="edge.product" />
-      </el-col>
-    </el-row>
+    <category-selector/>
+    <section class="bg-gray-300 py-4 h-full">
+      <div class="m-10 flex flex-wrap items-start justify-start">
+        <product-card
+          v-for="edge in $page.products.edges"
+          :key="edge.product.id"
+          :product="edge.product"
+        />
+      </div>
+    </section>
   </Layout>
 </template>
 
 <script>
-import ProductCard from "~/components/ProductCard";
+import ProductCard from "~/components/shop/ProductCard";
+import CategorySelector from "~/components/shop/CategorySelector";
 
 export default {
   metaInfo: {
     title: "Shop"
   },
   components: {
-    ProductCard
+    ProductCard,
+    CategorySelector
   }
 };
 </script>
@@ -32,6 +37,10 @@ query AllProducts {
         Name,
         Price
         Description,
+        categories {
+          id,
+          Name
+        },
         pictures {
           id,
           url
