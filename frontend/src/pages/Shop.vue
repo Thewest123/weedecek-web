@@ -1,14 +1,19 @@
 <template>
   <Layout>
     <category-selector/>
-    <section class="bg-gray-300 py-4 h-full">
-      <div class="m-10 flex flex-wrap items-start justify-start">
+    <section class="bg-gray-300 py-8 h-full px-8">
+
+      <masonry
+        :cols="{default: 3, 1000: 2, 700: 1}"
+        :gutter="{default: '2rem'}"
+        >
         <product-card
           v-for="edge in $page.products.edges"
           :key="edge.product.id"
           :product="edge.product"
         />
-      </div>
+      </masonry>
+
     </section>
   </Layout>
 </template>
@@ -30,7 +35,7 @@ export default {
 
 <page-query>
 query AllProducts {
-  products: allStrapiProduct {
+  products: allStrapiProduct (sortBy: "id", order: ASC) {
     edges {
       product: node {
         id,

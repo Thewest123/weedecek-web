@@ -1,28 +1,41 @@
 <template>
   <section
-    class="font-sans h-screen w-full bg-cover text-center flex flex-col items-center justify-center"
-    style="background:url(https://source.unsplash.com/random/1920x1080) no-repeat center;"
+    class="font-sans h-screen w-full bg-gray-900 text-center flex flex-col items-center justify-center"
   >
-    <div class="bg-white text-black rounded-full h-16 w-16 flex items-center justify-center mb-8">
-      <i class="fas fa-play ml-1"></i>
+    <div id="particles-js" class="w-full h-full absolute"></div>
+    <div id="content" class="w-full">
+      <h3
+        class="text-white mx-auto max-w-sm mt-4 font-normal text-2xl leading-normal"
+      >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, aut!</h3>
+      <h3
+        class="text-white mx-auto max-w-sm mt-4 font-normal text-2xl leading-normal"
+      >Your HIGHNESS deserves THE BEST.</h3>
     </div>
-    <label
-      for
-      class="uppercase tracking-extrawide text-white text-xs font-hairline mt-8"
-    >Watch Video</label>
-    <h3 class="text-white mx-auto max-w-sm mt-4 font-normal text-2xl leading-normal">
-      Differentiate Yourself And Attract
-      More Attention Sales And Profits
-    </h3>
+    <!--style="background:url('https://i.imgur.com/WHDX6c4.gif') no-repeat center; background-size: cover;"-->
+    <!-- https://source.unsplash.com/random/1920x1080 -->
   </section>
-  <!-- <div class="block">
-    <el-carousel trigger="click" height="300px">
-      <el-carousel-item v-for="item in 4" :key="item">
-        <h3 class="small">{{ item }}</h3>
-      </el-carousel-item>
-    </el-carousel>
-  </div>-->
 </template>
 
 <style>
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      particles: null
+    }
+  },
+  mounted() {
+    require("particles.js");
+
+    window.particlesJS.load("particles-js", "particles.json", function() {
+      console.log("Callback - particles.js config loaded");
+    });
+
+    /*particlesJS.load("particles-js", "particles.json", function() {
+      console.log("Callback - particles.js config loaded");
+    });*/
+  }
+};
+</script>

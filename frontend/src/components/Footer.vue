@@ -32,7 +32,7 @@
           >About Us</a>
         </li>
       </ul>
-      <p class="inline-block py-2 px-3 text-gray-700 text-xs">©2019 Weedecek<br>Made by Jan Černý</p>
+      <p class="inline-block py-2 px-3 text-gray-700 text-xs">©2019 Weedeček.cz<br>Made by <a href="https://jancerny.dev">Jan Černý</a></p>
     </div>
   </footer>
 </template>

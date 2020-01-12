@@ -6,11 +6,14 @@ import '~/assets/sass/main.scss'
 import locale from 'element-ui/lib/locale/lang/en'
 import ElementUI from 'element-ui';
 
+import VueMasonry from 'vue-masonry-css'
+
 import DefaultLayout from '~/layouts/Default.vue';
 
 export default function (Vue, { router, head, isClient }) {
   
   Vue.use(ElementUI, { locale });
+  Vue.use(VueMasonry);
   
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)

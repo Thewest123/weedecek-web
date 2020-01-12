@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:w-1/2 lg:w-1/3 flex flex-col mb-8 px-3">
+  <div class="w-full mb-8">
     <div class="overflow-hidden bg-white rounded-lg shadow-lg">
       <img class="w-full" :src="strapi_url + product.pictures[0].url" :alt="product.Name" />
       <div class="p-6 flex flex-col justify-between">
